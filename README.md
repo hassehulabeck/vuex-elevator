@@ -12,7 +12,7 @@ På varje våning finns en knapp "hit" som en trycker på när en vill att hisse
 I källaren sker alltid följande:
 En produkt (av 10 möjliga) hämtas och placeras på hissgolvet. Detta görs med API-anrop och dold digital marknadsföring.
 
-Du kanske själv vill skriva kod som gör att varan "hämtas ut" på en viss våning?
+Du kanske själv vill skriva kod som gör att varan "hämtas ut" på en viss våning? Yes!
 
 Trevligt nöje med att vidareutveckla kod eller bara att analysera den.
 
