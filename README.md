@@ -9,6 +9,7 @@ samt simulerar en hiss som kan åka mellan fyra våningar (själva den grafiska 
 
 På varje våning finns en knapp "hit" som en trycker på när en vill att hissen ska komma och hämta en.
 
+
 I källaren sker alltid följande:
 En produkt (av 10 möjliga) hämtas och placeras på hissgolvet. Detta görs med API-anrop och dold digital marknadsföring.
 
