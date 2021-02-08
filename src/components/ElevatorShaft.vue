@@ -4,7 +4,9 @@
     <button v-for="(floor, index) in elevatorshaft" :key="index" @click="comeHere(index)">
       {{ floor }}
     </button>
-    <article>{{ product.name }} (Nu endast {{ product.consumerPrice }})</article>
+    <article v-if="product">
+      {{ product.name }} (Nu endast {{ product.consumerPrice }})
+    </article>
   </div>
 </template>
 
@@ -52,9 +54,11 @@ button {
 article {
   position: absolute;
   bottom: 0;
-  padding: 0;
-  background: blanchedalmond;
-  width: 98%;
+  padding: 0.25;
+  background: rebeccapurple;
+  color: white;
+  font-weight: 700;
+  width: 100%;
   margin: 0 auto;
 }
 </style>
