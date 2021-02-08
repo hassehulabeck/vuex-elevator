@@ -13,21 +13,21 @@ export default new Vuex.Store({
       '2'
     ],
     currentFloor: 1,
-    products: null
+    product: null
   },
   mutations: {
     goto (state, call) {
       state.currentFloor = call
     },
-    SET_PRODUCTS(state, products) {
-      state.products = products
+    SET_PRODUCT(state, product) {
+      state.product = product
     }
   },
   actions: {
-    getProducts({commit}) {
+    getProducts({commit}, slump) {
       axios.get('https://www.hulabeck.se/html/temp/products.json')
         .then(response => {
-          commit('SET_PRODUCTS', response.data.products)
+          commit('SET_PRODUCT', response.data.products[slump])
         })
         .catch((err) => {
           console.error(err)
