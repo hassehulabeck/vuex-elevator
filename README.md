@@ -14,6 +14,8 @@ En produkt (av 10 möjliga) hämtas och placeras på hissgolvet. Detta görs med
 
 Du kanske själv vill skriva kod som gör att varan "hämtas ut" på en viss våning? Använd samma teknik som plockar fram produkten i källaren.
 
+
+
 Trevligt nöje med att vidareutveckla kod eller bara att analysera den.
 
 ## Project setup
