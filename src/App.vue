@@ -6,9 +6,12 @@
         class="floor"
         v-for="(floor, index) in elevatorshaft.slice().reverse()"
         :floor="floor"
+        :index="3 - index"
         :key="index"
       />
       <!-- Notera .slice().reverse() för att ändra ordningen på arrayen. -->
+      <!-- OBS. Rad 9 är en omräkning av index pga att jag vänder på arrayen på rad 7 -->
+      <!-- Siffran 3 motsvarar fyra element i arrayen elevatorshaft -->
     </section>
   </div>
 </template>
@@ -25,6 +28,15 @@ export default {
     },
     elevatorshaft() {
       return this.$store.state.elevatorshaft;
+    },
+  },
+  watch: {
+    currentFloor(newValue) {
+      if (newValue == 0) {
+        let slump = Math.floor(Math.random(0, 1) * 10);
+        // Siffran 10 pga antalet produkter i en hårdkodad jsonfil.
+        this.$store.dispatch("getProducts", slump);
+      }
     },
   },
 };

@@ -4,6 +4,7 @@
     <button v-for="(floor, index) in elevatorshaft" :key="index" @click="comeHere(index)">
       {{ floor }}
     </button>
+    <section v-if="isFloorNumber">Vi är högt uppe</section>
     <article v-if="product">
       {{ product.name }} (Nu endast {{ product.consumerPrice }})
     </article>
@@ -23,13 +24,8 @@ export default {
     product() {
       return this.$store.state.product;
     },
-  },
-  watch: {
-    currentFloor(newValue) {
-      if (newValue == 0) {
-        let slump = Math.floor(Math.random(0, 1) * 10);
-        this.$store.dispatch("getProducts", slump);
-      }
+    isFloorNumber() {
+      return this.$store.getters.isFloorNumber;
     },
   },
   methods: {

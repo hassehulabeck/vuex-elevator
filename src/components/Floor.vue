@@ -1,7 +1,7 @@
 <template>
   <div :class="{ isHere: isHere }">
-    {{ this.floor }}
-    <button @click="come(floor)">Hit</button>
+    {{ floor }}
+    <button @click="come(index)">Hit</button>
   </div>
 </template>
 
@@ -15,29 +15,21 @@ export default {
   },
   props: {
     floor: String,
+    index: Number,
   },
   computed: {
-    elevatorshaft() {
-      return this.$store.state.elevatorshaft;
-    },
     currentFloor() {
       return this.$store.state.currentFloor;
     },
   },
   methods: {
-    come(floor) {
-      let idx = this.elevatorshaft.findIndex((f) => {
-        return f == floor;
-      });
+    come(idx) {
       this.$store.commit("goto", idx);
     },
   },
   watch: {
     currentFloor(newValue) {
-      let idx = this.elevatorshaft.findIndex((f) => {
-        return f == this.floor;
-      });
-      if (newValue == idx) {
+      if (newValue == this.index) {
         this.isHere = true;
       } else {
         this.isHere = false;
@@ -55,8 +47,9 @@ div {
   padding: 1em;
   min-height: 10vh;
   flex: 0 1 auto;
+  box-sizing: border-box;
 }
 .isHere {
-  border: 2px solid red;
+  background: rosybrown;
 }
 </style>

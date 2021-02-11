@@ -10,10 +10,17 @@ export default new Vuex.Store({
       'Källaren',
       'Entreplan',
       '1',
-      '2'
+      '2',
     ],
     currentFloor: 1,
     product: null
+  },
+  getters: {
+    isFloorNumber(state) {
+      if (state.currentFloor > 1) {
+        return true;
+      }
+    }
   },
   mutations: {
     goto (state, call) {
@@ -35,5 +42,6 @@ export default new Vuex.Store({
     }
   },
   modules: {
-  }
+  },
+  
 })
